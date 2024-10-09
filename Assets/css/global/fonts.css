@@ -1,0 +1,17 @@
+/* Fonte padrão dos textos (Poppins) */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Textos Normais (Poppins) */
+.texto-pequeno {
+    font-size: 11px; /* Poppins pequeno */
+}
+
+.texto-medio {
+    font-size: 13px; /* Poppins médio */
+}
+
+.texto-grande {
+    font-size: 16px; /* Poppins grande */
+}
