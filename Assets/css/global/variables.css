@@ -1,0 +1,15 @@
+/* Cores principais */
+:root {
+    --color-dark-blue: #253745;          /* Azul escuro */
+    --color-deep-navy: #10202d;          /* Azul profundo */
+    --color-cyan: #729da9;               /* Ciano */
+    --color-dark-cyan: #307e7f;          /* Ciano escuro */
+    --color-deep-cyan: #06141b;          /* Ciano profundo (usado no footer) */
+    --color-gray: #ccd0cf;               /* Cinza */
+    --color-cream: #e4d4ba;              /* Creme (fundo usado no cardápio) */
+    --color-light-gray: #e6e3de;         /* Cinza claro (fundo geral) */
+    --color-white: #ffffff;              /* Branco */
+    --color-black: #000000;              /* Preto */
+    --color-brown: #3c261e;              /* Marrom */
+    --color-golden: #c68b2f;             /* Dourado */
+}

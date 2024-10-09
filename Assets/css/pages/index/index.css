@@ -1,0 +1,10 @@
+@import './partials/navbar.css';
+@import './partials/sobre.css';
+@import './partials/cardapio.css';
+@import './partials/espaco.css';
+@import './partials/galeria.css';
+@import './partials/eventos.css';
+@import './partials/faq.css';
+@import './partials/contatos.css';
+
+@import '../../global/global.css';
