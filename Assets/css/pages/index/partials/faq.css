@@ -1,50 +1,87 @@
-#faq{
+#faq{ /*ID que é responsavel por gerenciar as caracteristicas da section em si*/
     width: 100%;
     height: 100vh;
     background-color: var( --color-light-gray);
     display: flex;
-    align-items: right;
-    justify-content: right;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    
 }
 
-.faq-container{
-    width: 100%;
-    max-width: 80rem;
+.faq-titulo{ /*Classe responsável por alterar o titulo da seção*/
+    text-align: left;
+    font-size: 2.5rem;
+    color: var(--color-golden);
+    font-weight: bold;
+    margin-bottom: 2rem;
+    align-self: center;
+}
+
+.faq-container{ /*Classe que gerencia o tamanho e display do conteudo interno da section*/
+    width: 100%; 
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 90rem;
 }
 
-.faq-accordion-item{
+.faq-content{ /*Classe responsavel pela div que contem o arccordion e o titulo acompanhados */
+    margin-top: 3rem;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.faq-accordion{ /*Classe reponsavel pelo accordion em si*/
+    width: 100%;
+}
+
+.faq-accordion-item{ /*Classe responsavel pelas perguntas do faq que o usuario vai clicar*/
     background-color: #714933;
     padding: 1rem;
     margin-top: 1.5rem;
-    width: 50%;
+    width: 100%;
+    cursor: pointer;
 }
 
 
-.faq-accordion-link{
+
+.faq-accordion-pergunta{ /*Classe responsavel pelo P da pergunta (o texto) em si*/
     color: var(--color-light-gray);
-    text-decoration: none;
     width: 100%;
-    padding: 1rem 0;
     font-size: 20px;
     font-weight: bold;
-    width: 50%;
+    display: inline;
+    user-select: none; /* Paragrafo não selecionavel */
 }
 
 
 .faq-resposta{
     position: relative;
     background-color: var(--color-white);
-    width: 50%;
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease-in-out; /*Cria a transição pra abrir a resposta*/
+    cursor: default;
 }
 
-.faq-resposta::before{
+details[open] .faq-resposta { /* Define o tamanho da resposta quando ela for aberta*/
+    max-height: 10rem;
+}
+
+.faq-resposta::before{  /* Barrinha verde do lado da resposta */
     content: "";
     position: absolute;
     width: 0.6rem;
     height: 90%;
-    top: 0;
+    top: 5%;
     left: 0.5%;
     background-color: var(--color-dark-cyan);
     transform: translate(-50%);
@@ -56,11 +93,16 @@
     
 }
 
-.faq-accordion-item:target .faq-resposta{
-    max-height: 20rem;
-}
-
 summary::marker {
     color: var(--color-white);
     font-size: 1.2em;
+}
+
+.faq-image-container{
+    width: 55%;
+    height: 40rem;
+    background-image: url(../../../../images/faq/faq_background.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
 }
