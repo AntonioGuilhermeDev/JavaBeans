@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="Assets/css/pages/sign-up/sign-up.css">
+    <script type="module" defer src="Assets/js/sign-up/sign-up.js"></script>
     <title>Sign Up</title>
 </head>
 <body>
@@ -13,15 +14,16 @@
             Cadastre-se
         </h2>
         <img id="logo" src="Assets/images/logo/logo-2.png" alt="">
-        <form action="" id="sign-up-fields-wrapper">
-            <input type="text" placeholder="usuário" class="sign-up-field" id="sign-up-user-field">
-            <input type="email" placeholder="e-mail" class="sign-up-field" id="sign-up-email-field">
-            <input type="password" placeholder="senha" class="sign-up-field" id="sign-up-password-field">
-            <input type="password" placeholder="confirme sua senha" class="sign-up-field" id="sign-up-confirm-password-field">
+        <form action="" id="sign-up-fields-form">
+            <div id="sign-up-fields-wrapper">
+                <input type="text" placeholder="usuário" class="sign-up-field" id="sign-up-user-field">
+                <input type="text" placeholder="e-mail" class="sign-up-field" id="sign-up-email-field">
+                <input type="password" placeholder="senha" class="sign-up-field" id="sign-up-password-field">
+                <input type="password" placeholder="confirme sua senha" class="sign-up-field" id="sign-up-confirm-password-field">
+            </div>
+            <button type="submit" id="sign-up-button">Registrar</button>
         </form>
-        <button id="sign-up-button">
-            Registrar
-        </button>
+
         <p>Já possui uma conta? <a href="">Faça login</a></p>
     </div>
 </body>
