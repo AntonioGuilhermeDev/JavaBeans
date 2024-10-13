@@ -7,6 +7,39 @@
     align-items: center;
     justify-content: center;
     padding: 2rem 0;
+}
+
+
+.faq-container{ /*Classe que gerencia o tamanho e display do conteudo interno da section*/
+    width: 100%; 
+    margin: 0 auto;
+    padding: 10rem 1.5rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 90rem;
+    background-color: var(--color-light-gray);
+
+}
+
+.faq-image-container{ /* Responsavel por modificar a imagem (que no caso é um background dessa div) */
+    width: 55%;
+    height: 40rem;
+    border-radius: 8px;
+}
+
+.faq-image-container > img{
+    width: 100%;
+    height: 100%;
+}
+
+.faq-content{ /*Classe responsavel pela div que contem o arccordion e o titulo acompanhados */
+    margin-top: 3rem;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     
 }
 
@@ -17,25 +50,6 @@
     font-weight: bold;
     margin-bottom: 2rem;
     align-self: center;
-}
-
-.faq-container{ /*Classe que gerencia o tamanho e display do conteudo interno da section*/
-    width: 100%; 
-    margin: 0 auto;
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    max-width: 90rem;
-}
-
-.faq-content{ /*Classe responsavel pela div que contem o arccordion e o titulo acompanhados */
-    margin-top: 3rem;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
 }
 
 .faq-accordion{ /*Classe reponsavel pelo accordion em si*/
@@ -50,6 +64,13 @@
     cursor: pointer;
 }
 
+.faq-accordion-item:hover{ /* Muda a cor ao passar o mouse */
+    background-color: var(--color-brown);
+}
+
+.faq-accordion-item:hover ~ .faq-resposta { /* Muda a cor da resposta junto ao passar o mouse na pergunta */
+    background-color: #f0f0f0; 
+}
 
 
 .faq-accordion-pergunta{ /*Classe responsavel pelo P da pergunta (o texto) em si*/
@@ -72,6 +93,7 @@
     cursor: default;
 }
 
+
 details[open] .faq-resposta { /* Define o tamanho da resposta quando ela for aberta*/
     max-height: 10rem;
 }
@@ -87,22 +109,13 @@ details[open] .faq-resposta { /* Define o tamanho da resposta quando ela for abe
     transform: translate(-50%);
 }
 
-.faq-resposta p{
+.faq-resposta p{   /* Propriedades do texto da resposta */
     color: var(--color-black);
     padding: 2rem;
     
 }
 
-summary::marker {
+summary::marker { /* Muda a cor da setinha do faq*/
     color: var(--color-white);
     font-size: 1.2em;
-}
-
-.faq-image-container{
-    width: 55%;
-    height: 40rem;
-    background-image: url(../../../../images/faq/faq_background.png);
-    background-size: cover;
-    background-position: center;
-    border-radius: 8px;
 }
