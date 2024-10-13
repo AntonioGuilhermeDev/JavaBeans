@@ -35,9 +35,17 @@ body{
     height: 5rem;
 }
 
+#sign-up-fields-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
 #sign-up-fields-wrapper{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 2rem;
 }
 
@@ -46,7 +54,7 @@ body{
     width: 20rem;
     text-align: center;
     font-family: "Lucida Console", monospace;
-    text-transform: uppercase;
+
     color: var(--color-brown);
     border: var(--color-white) solid 3px;
     border-radius: 5rem;
@@ -54,6 +62,7 @@ body{
 
 .sign-up-field::placeholder{
     color: var(--color-brown);
+    text-transform: uppercase;
 }
 
 .sign-up-field:focus{
@@ -75,18 +84,23 @@ body{
     cursor: pointer;
 }
 
-#sign-up-wrapper p{
+p{
     font-size: 0.9rem;
     color: var(--color-white);
     margin-bottom: 1rem;
 }
 
-#sign-up-wrapper a{
+#sign-up-container a{
     color: var(--color-golden);
     text-decoration: none;
 }
 
-#sign-up-wrapper a:hover{
+#sign-up-container a:hover{
     color: var(--color-golden);
     text-decoration: underline;
+}
+
+.error-warning{
+    color: red ;
+    margin: 0;
 }
