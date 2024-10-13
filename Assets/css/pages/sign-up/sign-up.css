@@ -1,0 +1,92 @@
+@import '../../global/global.css';
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top right, rgb(0, 0, 0), rgba(62, 60, 60, 0.359)),url('../../../images/sobre/background.jpg');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+#sign-up-container{
+    height: 40rem;
+    width: 30rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--color-deep-cyan);
+    border: var(--color-white) solid;
+    border-radius: 3rem;
+}
+
+#sign-up-title{
+    font-size: 3rem;
+    letter-spacing: 5px;
+    font-family: "Brush Script MT", cursive;
+    color: var(--color-golden);
+}
+
+#logo{
+    height: 5rem;
+}
+
+#sign-up-fields-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sign-up-field{
+    height: 3rem;
+    width: 20rem;
+    text-align: center;
+    font-family: "Lucida Console", monospace;
+    text-transform: uppercase;
+    color: var(--color-brown);
+    border: var(--color-white) solid 3px;
+    border-radius: 5rem;
+}
+
+.sign-up-field::placeholder{
+    color: var(--color-brown);
+}
+
+.sign-up-field:focus{
+    border-width: 5px;
+    border-color: var(--color-golden);
+    outline: none;
+}
+
+#sign-up-button{
+    height: 2.5rem;
+    width: 10rem;
+    font-size: 0.9rem;
+    font-family: "Lucida Console", monospace;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: var(--color-cyan);
+    color: var(--color-white);
+    border-radius: 5rem;
+    cursor: pointer;
+}
+
+#sign-up-wrapper p{
+    font-size: 0.9rem;
+    color: var(--color-white);
+    margin-bottom: 1rem;
+}
+
+#sign-up-wrapper a{
+    color: var(--color-golden);
+    text-decoration: none;
+}
+
+#sign-up-wrapper a:hover{
+    color: var(--color-golden);
+    text-decoration: underline;
+}
