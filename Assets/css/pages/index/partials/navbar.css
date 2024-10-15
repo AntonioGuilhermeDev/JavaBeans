@@ -108,3 +108,66 @@
 .nav-mobile-menu{ /* Impede que o menu mobile apareça fora da media querie especifica*/
     display: none;
 }
+
+@media screen and (max-width: 911px) {
+    .nav-topo-header {
+        display: row;
+    }
+
+    .nav-bar {
+        display: none;
+    }
+
+    .nav-mobile-icone-menu {
+        display: block;
+    }
+
+    .nav-mobile-icone-menu button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .nav-mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+
+    .nav-mobile-menu .nav-item {
+        display: block;
+    }
+
+    
+    .nav-mobile-menu .nav-item .nav-link {
+        display: block;
+        padding: 0.5rem;
+    }
+
+    .open {
+        display: block;
+    }
+
+    .nav-perfil {
+        order: 4;
+        margin-right: 1rem;
+        margin-left: 0;
+    }
+
+    .logo {
+        order: 2;
+        margin: 0 auto
+    }
+
+    .nav-botao-reservar {
+        order: 3;
+        
+    }
+
+    .nav-mobile-icone-menu {
+        order: 1;
+        margin-left: 1rem;
+        margin-right: auto;
+    }
+}
