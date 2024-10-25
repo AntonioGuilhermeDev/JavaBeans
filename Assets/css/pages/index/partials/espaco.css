@@ -1,0 +1,103 @@
+@font-face {
+    font-family: feeling;
+    src: url(../../../../../FontesEspaco/feeling-passionate-regular.ttf);
+}
+
+@font-face {
+    font-family: moresugar;
+    src: url(../../../../../FontesEspaco/MoreSugar-Regular.otf);
+}
+
+#espaco {
+    width: 100%;
+    height: 100vh;
+    background-color: var( --color-light-gray);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.espaco-container{
+    width: 100%; 
+    margin: 0 auto;
+    padding: 6rem 1.5rem 1.5rem 3.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-end;
+    background-color: var(--color-light-gray);   
+}
+
+.espaco-img-container{
+    width: 43%;
+    height: 41rem;
+}
+
+.espaco-img-container > img {
+    width: 105%;
+    height: 100%;
+    float: right;
+    margin: -23.5px;
+    margin-top: 35px; 
+    box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.titulo-espaco{
+    font-family: feeling;
+    font-size: 100px;
+    color: var(--color-brown);
+    position: absolute;
+    top: 145px;
+    left: 0;
+    right: 1000px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.espaco-texto{
+    position: absolute;
+    top: 185px;
+    left: 0;
+    right: 205px;
+    text-align: center;
+    font-size: 13.8px;
+}
+
+.titulo-texto{
+   font-family: moresugar;
+   color: var(--color-cyan);
+   font-size: 24px;
+}
+
+.p-espaco{
+    color: var(--color-white);
+    font-size: 16px
+}
+
+.back-texto{
+    width: 30rem;
+    height: 38rem;
+    background-color: var(--color-brown);
+    position: absolute;
+    top: 170px;
+    left: 400px;
+    right: 0;
+    text-align: center;
+}
+
+.botao-reserv{
+    position: absolute;
+    top: 36rem;
+    left: 4rem;
+    right: 0;
+    text-align: center;
+    border: 3px solid var(--color-brown);
+    border-radius: 15px;
+    padding: 10px;
+    width: 16rem;
+    background-color: var(--color-gray);
+    color: var(--color-brown);
+    font-size: 1rem;
+}
