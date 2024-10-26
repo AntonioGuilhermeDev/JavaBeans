@@ -58,7 +58,7 @@ html {
 .fechar-dropdown {
     position: absolute;
     top: 1px;
-    right: 10px;
+    right: 3px;
     cursor: pointer;
     width: 14px; 
     height: 14px; 
@@ -194,6 +194,15 @@ html {
         flex-direction: column;
         text-align: center;
         padding-bottom: 1rem;
+    }
+
+    .conteudo-dropdown {
+        position: fixed;
+        left: 50%;
+        right: 0;
+        margin: auto;
+        top: 70px;
+        min-width: 200px;
     }
 
     .nav-mobile-menu .nav-item {
