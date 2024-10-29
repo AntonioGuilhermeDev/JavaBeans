@@ -11,6 +11,7 @@ signUpForm.addEventListener('submit', (event) => {
         const errorMessage = signUpValidate.createWarning(error);  // Usando a função importada
         signUpForm.insertAdjacentElement('afterbegin', errorMessage);
     } else {
-        alert("Tudo ok")
+        signUpValidate.addUser(username.value, email.value, password.value)
+        alert('Usuário Registrado')
     }
 });
