@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": "b4a9",
+      "user": "user",
+      "email": "user@email.com",
+      "password": "user123",
+      "statement": false
+    },
+    {
+      "id": "3b97",
+      "user": "julia",
+      "email": "julia@email.com",
+      "password": "julia",
+      "statement": false
+    }
+  ]
+}
