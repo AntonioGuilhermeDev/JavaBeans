@@ -1,3 +1,8 @@
+@font-face {
+    font-family: moresugar;
+    src: url(../../../../../FontesEspaco/MoreSugar-Regular.ttf);
+}
+
 #cardapio{
     background-color: var(--color-light-gray);
     margin: 0;
@@ -102,7 +107,7 @@
     height: 80px;
 }
 
- /* Estilos responsivos */
+ /* responsivo mobile */
  @media (min-width: 450px) and (max-width: 768px) {
 
     #cardapio{
@@ -206,3 +211,5 @@
         height: 0px;
     }
 }
+
+/* responsivo tablets e noteboks */
