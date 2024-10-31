@@ -1,13 +1,3 @@
-@font-face {
-    font-family: feeling;
-    src: url(../../../../fonts/FontesEspaco/feeling-passionate-regular.ttf);
-}
-
-@font-face {
-    font-family: moresugar;
-    src: url(../../../../fonts/FontesEspaco/MoreSugar-Regular.ttf);
-}
-
 #nosso-espaco {
     height: 120vh;
     width: 100%;

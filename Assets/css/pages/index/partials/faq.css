@@ -44,9 +44,10 @@
     text-align: left;
     font-size: 2.5rem;
     color: var(--color-golden);
-    font-weight: bold;
+    font-weight: normal;
     margin-bottom: 2rem;
     align-self: center;
+    font-family: moresugar;
 }
 
 .faq-accordion { /*Classe reponsavel pelo accordion em si*/

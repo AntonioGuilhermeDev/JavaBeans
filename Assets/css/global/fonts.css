@@ -3,6 +3,16 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+@font-face {
+    font-family: feeling;
+    src: url(../../../Assets/fonts/FontesEspaco/feeling-passionate-regular.ttf);
+}
+
+@font-face {
+    font-family: moresugar;
+    src: url(../../../Assets/fonts/FontesEspaco/MoreSugar-Regular.ttf);
+}
+
 /* Textos Normais (Poppins) */
 .texto-pequeno {
     font-size: 11px; /* Poppins pequeno */
