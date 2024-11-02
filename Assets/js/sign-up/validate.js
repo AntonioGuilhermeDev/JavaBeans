@@ -1,4 +1,4 @@
-const url = 'http://localhost:3000/users'
+const url = 'http://localhost:3000/users';
 
 const createWarning = function (warningMessage) {
     let errorWarning = document.createElement('p');
@@ -8,61 +8,99 @@ const createWarning = function (warningMessage) {
         errorWarning.remove();
     }, 3000);
     return errorWarning;
-}
+};
 
 const clearWarnings = function () {
     const existingWarnings = document.querySelectorAll('.error-warning');
-    existingWarnings.forEach(warning => warning.remove());  
-}
+    existingWarnings.forEach(warning => warning.remove());
+};
 
 const errorsWarningList = {
     "emptyFields": "Preencha todos os campos",
     "shortPassword": "A senha deve conter mais de 3 caracteres",
-    "diferentPasswords": "As senhas não coincidem"
-}
+    "diferentPasswords": "As senhas não coincidem",
+    "userExists": "Usuário já registrado"
+};
 
-const validateFields = function (username, email,password,confirmPassword) {
+const validateFields = function (username, email, password, confirmPassword) {
     const usernameValue = username.value;
     const emailValue = email.value;
     const passwordValue = password.value;
     const confirmPasswordValue = confirmPassword.value;
 
     if (usernameValue === '' || emailValue === '' || passwordValue === '' || confirmPasswordValue === '') {
-        return errorsWarningList.emptyFields;
+        return Promise.resolve(errorsWarningList.emptyFields);
     } else if (passwordValue.length <= 3) {
-        return errorsWarningList.shortPassword;
-    } else if (passwordValue != confirmPasswordValue){
-        return errorsWarningList.diferentPasswords;
-    }
-    return null;
-}
-
-const addUser = function (user, email, password) {
-    const newUser = {
-        user: user,
-        email: email,
-        password: password,
-        statement: false
+        return Promise.resolve(errorsWarningList.shortPassword);
+    } else if (passwordValue !== confirmPasswordValue) {
+        return Promise.resolve(errorsWarningList.diferentPasswords);
     }
 
-    fetch(url, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(newUser)
-    })
+    return checkUserExists(username, email).then(exist => {
+        if (exist) {
+            return errorsWarningList.userExists;
+        } else {
+            return null;
+        }
+    });
+};
+
+const checkUserExists = function (username, email) {
+    return fetch(url)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
+            return response.json();
         })
-}
+        .then(users => {
+            return users.some(user => user.user === username || user.email === email);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            return false;
+        });
+};
 
-export default{
+const addUser = function (username, email, password) {
+    checkUserExists(username, email).then(exists => {
+        if (exists) {
+            const errorMessage = createWarning(errorsWarningList.userExists);
+            document.querySelector('form').insertAdjacentElement('afterbegin', errorMessage);
+            return;
+        } else {
+            const newUser = {
+                user: username,
+                email: email,
+                password: password,
+                statement: false
+            };
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newUser)
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    const errorMessage = createWarning("Erro ao processar o cadastro.");
+                    document.querySelector('form').insertAdjacentElement('afterbegin', errorMessage);
+                });
+        }
+    });
+};
+
+export default {
     createWarning,
     clearWarnings,
     errorsWarningList,
     validateFields,
     addUser
-}
+};
