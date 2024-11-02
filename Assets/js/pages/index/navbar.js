@@ -55,7 +55,6 @@ function checkLoginStatus() {
 
 // Função para simular login
 function login() {
-    localStorage.setItem("loggedIn", 'true');
     checkLoginStatus();
 }
 
