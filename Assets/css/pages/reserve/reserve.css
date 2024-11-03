@@ -1,13 +1,10 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import '../../global/global.css';
+
 
 section {
     height: 100vh;
     width: 100%;
-    background-color: #f5f5dc;
+    background-color: var(--color-light-gray);
     display: flex;
     padding: 2rem;
 }
@@ -15,15 +12,13 @@ section {
 .coffe-shop {
     height: 100%;
     width: 50%;
-    background-color: rgb(148, 140, 110);
+    background-color: var(--color-brown);
     display: flex;
-
 }
 
 #left-tables{
     height: 100%;
     width: 50%;
-    /* background-color: aquamarine; */
 }
 
 #top-tables{
@@ -37,50 +32,59 @@ section {
 }
 
 .table{
-    height: 100px;
-    width: 180px;
-    background-image: url('../../../images/icones/table.png');
+    height: 10rem;
+    width: 10rem;
+    background-image: url('../../../images/icones/mesa-padrao.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    transition: transform 0.3s ease; /* Adiciona uma transição suave */
+    transition: transform 0.3s ease; 
+    cursor: pointer;
     
 }
 
+.mesa-redonda-grande{
+    background-image: url('../../../images/icones/mesa-redonda1.png');    
+}
+
+.mesa-redonda-pequena{
+    background-image: url('../../../images/icones/mesa-redonda-pequena.png');    
+}
+
 .table:hover {
-    transform: scale(1.1); /* Aumenta o tamanho em 10% quando hover */
+    transform: scale(1.1); 
 }
 
 #bottom-tables{
     height: 30%;
     width: 100%;
-    /* background-color:yellowgreen; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    position: relative;
     padding: 20px;
 }
 
 .big-table{
-    height: 100px;
-    width: 300px;
-    background-image: url('../../../images/icones/table.png');
+    height: 10rem;
+    width: 15rem;
+    background-image: url('../../../images/icones/mesa-grande-inferior.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    transition: transform 0.3s ease; /* Adiciona uma transição suave */
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 #big-table:hover {
-    transform: scale(1.1); /* Aumenta o tamanho em 10% quando hover */
+    transform: scale(1.1); 
 }
 
 
 #right-tables{
     height: 100%;
     width: 50%;
-    /* background-color: blueviolet; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -91,7 +95,7 @@ section {
 #reserve {
     height: 100%;
     width: 50%;
-    background-color: #3e2723;
+    background-color: var(--color-deep-navy);
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
     display: flex;
@@ -99,11 +103,24 @@ section {
     justify-content: space-between;
     align-items: center;
     padding: 30px;
+    position: relative;
 }
 
 h1{
-    font-size: 50px;
-    color: #ffffff;
+    font-family: "Brush Script MT", cursive;
+    font-size: 5rem;
+    letter-spacing: 3px;
+    color: var(--color-golden);
+}
+
+#date{
+    font-size: 1.2rem;
+}
+
+#logo{
+    height: 6rem;
+    width: 7rem;
+    margin-top: 1rem;
 }
 #title{
     display: flex;
@@ -112,13 +129,13 @@ h1{
     align-items: center;
 }
 p, h3{
-    color: #ffffff;
+    color: var(--color-white);
 }
 
 #table-info{
-    height: 200px;
-    width: 500px;
-    background-color: #ffff;
+    height: 10rem;
+    width: 100%;
+    background-color: var(--color-white);
     border-radius: 50px;
     display: flex;
     align-items: center;
@@ -126,11 +143,11 @@ p, h3{
 }
 
 #left-info h3{
-    color: #3e2723;
+    color: var(--color-brown);
 }
 
 #right-info h3{
-    color:darkorange;
+    color:var(--color-golden)
 }
 
 #right-info{
@@ -146,17 +163,16 @@ input{
     text-align: center;
 }
 
+#user{
+    border-top-left-radius:50px;
+    border-bottom-left-radius: 50px;
+}
+
 button{
     height: 40px;
     width: 80px;
-}
-
-.table[data-status="disponível"]::after {
-    content: " (Disponível)";
-    color: green; /* cor do texto disponível */
-}
-
-.table[data-status="reservada"]::after {
-    content: " (Reservada)";
-    color: red; /* cor do texto reservado */
+    border-top-right-radius: 50px ;
+    border-bottom-right-radius: 50px ;
+    background-color: var(--color-golden);
+    color: var(--color-white);
 }
