@@ -1,0 +1,107 @@
+#eventos {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--color-light-gray);
+    width: 100%;}
+
+
+.eventos-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-black);
+    height: 90%;
+    width: 100%;
+    margin-top: 40px}
+
+.eventos-right-content{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    order: 2;
+}
+
+.eventos-left-content{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    height: 100%;
+    align-self: flex-start;
+    order: 1;
+    position: relative;
+}
+
+
+.eventos-logo {
+    width: 21%;
+    height: 100%;
+    position: relative;
+    bottom: -770px;
+    left: 245px;
+    z-index: 20;
+    object-position: left;
+    object-fit: cover;
+}
+
+.eventos-background{
+    width: 60%;
+    height: 100%;
+    border-top-right-radius: 100px;
+}
+
+.eventos-background img{
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 100px;
+}
+
+.eventos-abobora{
+    position: absolute;
+    bottom: 50%;
+    left: 60%;
+    transform: translate(-50%, 50%);
+    z-index: 2;
+}
+
+.eventos-abobora img{
+    width: 100%;
+    height: 100%;
+}
+
+.eventos-titulos-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: self-start;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    gap: 10px}
+
+.eventos-titulos-container h2{
+    font-family: Moresugar;
+    font-size: 45px;
+    font-weight: normal;
+    color: var(--color-light-gray);}
+
+.eventos-titulos-container h3{
+    font-family: Feeling;
+    font-size: 45px;
+    color: var(--color-golden);}
+
+.eventos-textos-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+    height: auto;
+    gap: 15px}
+
+.eventos-textos-container p{
+    color: var(--color-light-gray);
+    font-size: 20px;}
+
+.eventos-textos-container .eventos-data{
+    color: var(--color-dark-cyan);}
