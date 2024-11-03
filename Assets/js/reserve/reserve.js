@@ -4,6 +4,10 @@ const password = document.getElementById('password');
 const tables = document.querySelectorAll('.table');
 let displayIdTable = document.getElementById('display-id-table');
 let displayStatusTable = document.getElementById('display-status-table');
+let date = document.getElementById('date')
+const currentDate = new Date()
+currentDate.setDate(currentDate.getDate() + 1);
+date.innerText = currentDate.toLocaleDateString('pt-BR')
 
 let allTables = [
     '', {
