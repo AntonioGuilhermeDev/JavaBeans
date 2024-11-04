@@ -19,7 +19,14 @@ const errorsWarningList = {
     "emptyFields": "Preencha todos os campos",
     "shortPassword": "A senha deve conter mais de 3 caracteres",
     "diferentPasswords": "As senhas não coincidem",
-    "userExists": "Usuário já registrado"
+    "userExists": "Usuário já registrado",
+    "invalidEmail": "O email deve conter '@' e um domínio válido"
+};
+
+const validateEmail = function (emailValue) {
+    // Expressão regular para validar o formato do email
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(emailValue);
 };
 
 const validateFields = function (username, email, password, confirmPassword) {
@@ -34,6 +41,8 @@ const validateFields = function (username, email, password, confirmPassword) {
         return Promise.resolve(errorsWarningList.shortPassword);
     } else if (passwordValue !== confirmPasswordValue) {
         return Promise.resolve(errorsWarningList.diferentPasswords);
+    } else if (!validateEmail(emailValue)) {
+        return Promise.resolve(errorsWarningList.invalidEmail); 
     }
 
     return checkUserExists(username, email).then(exist => {
@@ -104,3 +113,4 @@ export default {
     validateFields,
     addUser
 };
+
