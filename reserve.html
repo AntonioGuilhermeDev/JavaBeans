@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Assets/css/pages/reserve/reserve.css">
     <script src="Assets/js/reserve/reserve.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Reserve</title>
 </head>
 
@@ -54,12 +57,25 @@
                     <h3 id="display-id-table">
                         1
                     </h3>
-                    <h3 id="display-status-table" >Disponível</h3>
+                    <h3 id="display-status-table">Disponível</h3>
                 </div>
             </div>
+            <p id="error-message" style="color: red; display: none;"></p>
             <form id="reserve-form">
-                <input type="text" name="" id="user" placeholder="User">
-                <input type="password" name="" id="password" placeholder="Password">
+                <div class="field-container">
+                    <i class="fa-solid fa-user" id="user-icon"></i>
+                    <input type="text" name="" id="user" placeholder="User">
+                </div>
+                <div class="field-container">
+                    <i class="fa-solid fa-lock" id="password-icon"></i>
+                    <input type="password" name="" id="password" placeholder="Password">
+                </div>
+                <div class="field-container">
+                    <i class="fa-solid fa-clock" id="time-icon"></i>
+                    <select id="time">
+                        <option value="" disabled selected>Selecione um horário...</option>
+                    </select>
+                </div>
                 <button type="submit">Enviar</button>
             </form>
         </div>
