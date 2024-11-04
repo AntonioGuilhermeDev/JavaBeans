@@ -1,5 +1,9 @@
 import signUpValidate from './validate.js';
-import { signUpForm, username, email, password, confirmPassword } from './selectors.js';
+import { signUpForm, username, email, password, confirmPassword, modal, confimButton } from './selectors.js';
+
+modal.addEventListener('cancel', (event) => {
+    event.preventDefault();
+});
 
 signUpForm.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -13,6 +17,7 @@ signUpForm.addEventListener('submit', (event) => {
                 signUpForm.insertAdjacentElement('afterbegin', errorMessage);
             } else {
                 signUpValidate.addUser(username.value, email.value, password.value);
+                modal.showModal();
             }
         })
         .catch(error => {
@@ -21,3 +26,7 @@ signUpForm.addEventListener('submit', (event) => {
             signUpForm.insertAdjacentElement('afterbegin', errorMessage);
         });
 });
+
+confimButton.onclick = function(){
+    modal.close()
+}
