@@ -118,8 +118,8 @@ h1{
 }
 
 #logo{
-    height: 6rem;
-    width: 7rem;
+    height: 5rem;
+    width: 6rem;
     margin-top: 1rem;
 }
 #title{
@@ -133,8 +133,8 @@ p, h3{
 }
 
 #table-info{
-    height: 10rem;
-    width: 100%;
+    height: 6rem;
+    width: 80%;
     background-color: var(--color-white);
     border-radius: 50px;
     display: flex;
@@ -157,22 +157,79 @@ p, h3{
     align-items: center;
 }
 
-input{
-    height: 40px;
-    width: 200px;
-    text-align: center;
+#reserve-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
 }
 
 #user{
-    border-top-left-radius:50px;
-    border-bottom-left-radius: 50px;
+
 }
 
 button{
     height: 40px;
-    width: 80px;
-    border-top-right-radius: 50px ;
-    border-bottom-right-radius: 50px ;
+    width: 200px;
+    border-radius: 30px;
     background-color: var(--color-golden);
     color: var(--color-white);
+}
+
+.field-container {
+    height: 40px;
+    width: 60%;
+    position: relative; /* Cria um contexto para o posicionamento absoluto do ícone */
+    display: flex; /* Utiliza flexbox para alinha o ícone e o input na horizontal */
+    background-color: var(--color-white);
+    border-radius: 10px;
+}
+
+.field-container input{
+    padding-left: 30px; /* Espaço para evitar que o texto do input fique sobre o ícone */
+    height: 2rem; /* Ajusta a altura do input, se necessário */
+    width: 100%; /* Faz o input ocupar toda a largura do contêiner */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+    margin-left: 1rem;
+    padding-top: 10px;
+    border-radius: 20px;
+}
+
+input::placeholder{
+    color: var(--color-brown);
+}
+
+input:focus{
+    outline: none;
+}
+
+.field-container i {
+    position: absolute; /* Permite posicionar o ícone dentro do input */
+    left: 10px; /* Espaço da borda esquerda */
+    top: 50%; /* Centraliza verticalmente o ícone */
+    transform: translateY(-50%); /* Ajusta a posição vertical do ícone */
+    color: var(--color-brown);
+}
+
+#time {
+    height: 2rem; /* Ajuste a altura do select para combinar com os outros inputs */
+    padding-left: 30px; /* Espaço para o ícone */
+    width: 100%; /* Faz o select ocupar toda a largura do contêiner */
+    box-sizing: border-box; /* Inclui padding na largura total */
+    margin-left: 1rem;
+    appearance: none; /* Remove a aparência padrão do select (se desejado) */
+    border-radius: 20px;
+    background-color: var(--color-white); /* Cor de fundo do select */
+}
+
+.field-container #time {
+    
+    height: 100%;
+    width: 100%;
+    color: var(--color-brown);
+}
+
+#time:focus {
+    outline: none; /* Garante que o contorno esteja removido no foco */
 }
