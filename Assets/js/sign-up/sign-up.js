@@ -29,4 +29,5 @@ signUpForm.addEventListener('submit', (event) => {
 
 confimButton.onclick = function(){
     modal.close()
+    window.location.href = "index.html";
 }

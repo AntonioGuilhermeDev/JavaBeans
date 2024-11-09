@@ -24,7 +24,6 @@ const errorsWarningList = {
 };
 
 const validateEmail = function (emailValue) {
-    // Expressão regular para validar o formato do email
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(emailValue);
 };
