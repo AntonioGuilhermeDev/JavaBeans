@@ -20,15 +20,15 @@
     url(../../../../../Assets/images/sobre/background.jpg);
     background-size: cover;
     background-position: bottom center;
-    border-end-end-radius: 250px;
+    border-end-end-radius: 45%;
+
 }
 
 .sobre-logo {
     display: flex;
-    width: 35%;
+    width: 30%;
     height: 50%;
     margin: 0 auto 8rem auto;
-    align-self: right;
     z-index: 20;
     order: 2;
 }
@@ -40,11 +40,10 @@
     width: 60%;
     text-align: center;
     justify-content: center;
-    align-items: left;
     flex-direction: column;
     order: 1;
     z-index: 10;
-    gap: 20px;
+    gap: 40px;
     margin-bottom: 8rem;
     /* Ajuste a largura conforme necessário */
 }
@@ -54,7 +53,6 @@
     font-family: 'Brush Script MT', cursive;
     text-align: justify;
     line-height: 1em;
-    text-align: left;
     letter-spacing: 0.05em;
     margin-left: 20px;
 }
@@ -80,7 +78,7 @@
     }
     
     .sobre-logo {
-        width: 50%;
+        width: 35%;
         height: 40%;
         margin-bottom: 4rem;
     }
@@ -169,7 +167,7 @@
     }
     
     .sobre-logo {
-        width: 80%;
+        width: 60%;
         height: 18rem;
         margin: 5rem auto 2rem auto;
         align-self: center;
@@ -198,7 +196,7 @@
     }
 
     .sobre-h1 {
-        font-size: 3rem;
+        font-size: 4rem;
         font-family: 'Brush Script MT', cursive;
         text-align: center;
         font-weight: bold;
