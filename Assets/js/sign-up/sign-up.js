@@ -1,17 +1,33 @@
 import signUpValidate from './validate.js';
-import {signUpForm, username, email, password, confirmPassword} from './selectors.js';
+import { signUpForm, username, email, password, confirmPassword, modal, confimButton } from './selectors.js';
+
+modal.addEventListener('cancel', (event) => {
+    event.preventDefault();
+});
 
 signUpForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
     signUpValidate.clearWarnings();
-    
-    const error = signUpValidate.validateFields(username, email, password, confirmPassword);  // Usando a função importada
-    if (error) {
-        const errorMessage = signUpValidate.createWarning(error);  // Usando a função importada
-        signUpForm.insertAdjacentElement('afterbegin', errorMessage);
-    } else {
-        signUpValidate.addUser(username.value, email.value, password.value)
-        alert('Usuário Registrado')
-    }
+
+    signUpValidate.validateFields(username, email, password, confirmPassword)
+        .then((error) => {
+            if (error) {
+                const errorMessage = signUpValidate.createWarning(error);
+                signUpForm.insertAdjacentElement('afterbegin', errorMessage);
+            } else {
+                signUpValidate.addUser(username.value, email.value, password.value);
+                modal.showModal();
+            }
+        })
+        .catch(error => {
+            console.error('Erro durante a validação:', error);
+            const errorMessage = signUpValidate.createWarning("Erro ao processar o cadastro.");
+            signUpForm.insertAdjacentElement('afterbegin', errorMessage);
+        });
 });
+
+confimButton.onclick = function(){
+    modal.close()
+    window.location.href = "index.html";
+}
