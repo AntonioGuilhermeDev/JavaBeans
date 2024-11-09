@@ -17,7 +17,7 @@
     background-color: var(--color-cream);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 2rem;
-    width: 100%;
+    width: 95%;
     max-width: 1600px;
     border-radius: 110px;
     border: 10px solid var(--color-deep-navy); /* Adiciona a borda escura */
@@ -25,6 +25,7 @@
     flex-wrap: wrap; /* Permite itens se ajustarem em várias linhas */
     justify-content: space-between; /* Espaça itens horizontalmente */
     position: relative;
+    margin-top: 80px;
 }
 .cardapio h1 {
     text-align: center;
@@ -117,7 +118,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 120vh;
         }
         .cardapio {
             flex-direction: column;
@@ -209,7 +210,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        height: 130vh;
     }
 
     .cardapio {
@@ -218,6 +219,7 @@
         border-radius: 50px;
         border: 8px solid var(--color-deep-navy);
         width: 29rem;
+        margin-top: 8rem;
     }
 
     .cardapio h1 {
@@ -314,7 +316,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        height: 130vh;
     }
     
     .cardapio {
@@ -322,7 +324,7 @@
         height: 45rem;
         border-radius: 60px;
         border: 8px solid var(--color-deep-navy);
-        margin-top: 3rem;
+        margin-top: 6rem;
     }
 
     .cardapio h1 {
