@@ -2,18 +2,28 @@ const form = document.getElementById('sign-in-fields-form');
 const user = document.getElementById('sign-in-user-field');
 const password = document.getElementById('sign-in-password-field');
 
-// Função para criar e exibir uma mensagem de erro
+const modal = document.getElementById('modal');
+const closeModalButton = document.getElementById('close-modal');
+
+
+function openModal() {
+    modal.style.display = 'flex'; 
+}
+
+function closeModal() {
+    modal.style.display = 'none'; 
+}
+
 const createWarning = function (warningMessage) {
     let errorWarning = document.createElement('p');
-    errorWarning.classList.add('error-warning'); // Adicione uma classe para estilo
+    errorWarning.classList.add('error-warning'); 
     errorWarning.innerText = warningMessage;
     setTimeout(() => {
-        errorWarning.remove(); // Remover após 3 segundos
+        errorWarning.remove(); 
     }, 3000);
     return errorWarning;
 }
 
-// Função para validar se os campos estão preenchidos
 const validateFields = function(user, password) {
     if (user.trim() === '') {
         return 'O campo de usuário não pode estar vazio.';
@@ -21,25 +31,22 @@ const validateFields = function(user, password) {
     if (password.trim() === '') {
         return 'O campo de senha não pode estar vazio.';
     }
-    return null; // Nenhum erro
+    return null; 
 };
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     
-    // Limpa mensagens de erro existentes
     const existingWarnings = document.querySelectorAll('.error-warning');
     existingWarnings.forEach(warning => warning.remove());
 
-    // Validar campos antes de prosseguir
     const validationError = validateFields(user.value, password.value);
     if (validationError) {
-        const errorMessage = createWarning(validationError); // Cria a mensagem de erro
-        form.insertAdjacentElement('afterbegin', errorMessage); // Insere a mensagem no formulário
-        return; // Interromper a execução se houver erro
+        const errorMessage = createWarning(validationError); 
+        form.insertAdjacentElement('afterbegin', errorMessage); 
+        return; 
     }
 
-    // Prosseguir com a tentativa de login
     signInUser(user.value, password.value);
 });
 
@@ -70,26 +77,25 @@ const signInUser = function(user, password) {
                         return response.json(); 
                     })
                     .then(updatedUser => {
-                        alert('Usuário logado');
+                        openModal();
                         localStorage.setItem("loggedIn", 'true');
-                        window.location.href = 'index.html';
                         return true;
                     });
                 } else {
-                    const errorMessage = createWarning('Senha incorreta'); // Usar a nova função
-                    form.insertAdjacentElement('afterbegin', errorMessage); // Insere a mensagem no formulário
+                    const errorMessage = createWarning('Senha incorreta'); 
+                    form.insertAdjacentElement('afterbegin', errorMessage); 
                     return false; 
                 }
             } else {
-                const errorMessage = createWarning('Usuário não encontrado'); // Usar a nova função
-                form.insertAdjacentElement('afterbegin', errorMessage); // Insere a mensagem no formulário
+                const errorMessage = createWarning('Usuário não encontrado'); 
+                form.insertAdjacentElement('afterbegin', errorMessage); 
                 return false; 
             }
         });
     }).catch(error => {
         console.error('Error:', error);
-        const errorMessage = createWarning('Erro ao verificar o usuário'); // Usar a nova função
-        form.insertAdjacentElement('afterbegin', errorMessage); // Insere a mensagem no formulário
+        const errorMessage = createWarning('Erro ao verificar o usuário'); 
+        form.insertAdjacentElement('afterbegin', errorMessage); 
         return false; 
     });
 }
@@ -134,3 +140,7 @@ function login() {
     localStorage.setItem("loggedIn", 'true');
     checkLoginStatus();
 }
+
+closeModalButton.addEventListener('click', () => {
+    window.location.href = 'index.html';
+});
