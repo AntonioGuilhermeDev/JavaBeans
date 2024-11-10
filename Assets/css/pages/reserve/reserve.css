@@ -12,27 +12,21 @@ section {
 .coffe-shop {
     height: 100%;
     width: 50%;
-    background-color: var(--color-brown);
-    display: flex;
+      
 }
 
-#left-tables{
+.coffe-shop-container{
     height: 100%;
-    width: 50%;
-}
-
-#top-tables{
-    height: 70%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 5 colunas */
+    grid-template-rows: repeat(5, 1fr);    /* 2 linhas */
+    place-items: center;
+    background-color: var(--color-brown);
+    align-items: stretch; 
 }
 
 .table{
-    height: 10rem;
+    height: 7rem;
     width: 10rem;
     background-image: url('../../../images/icones/mesa-padrao.png');
     background-size: cover;
@@ -45,6 +39,7 @@ section {
 
 .mesa-redonda-grande{
     background-image: url('../../../images/icones/mesa-redonda1.png');    
+    background-position: center 32%;
 }
 
 .mesa-redonda-pequena{
@@ -53,17 +48,6 @@ section {
 
 .table:hover {
     transform: scale(1.1); 
-}
-
-#bottom-tables{
-    height: 30%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    position: relative;
-    padding: 20px;
 }
 
 .big-table{
@@ -79,17 +63,6 @@ section {
 
 #big-table:hover {
     transform: scale(1.1); 
-}
-
-
-#right-tables{
-    height: 100%;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px;
 }
 
 #reserve {
@@ -136,7 +109,7 @@ p, h3{
     height: 6rem;
     width: 80%;
     background-color: var(--color-white);
-    border-radius: 50px;
+    border-radius: 30px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -165,9 +138,6 @@ p, h3{
     align-items: center;
 }
 
-#user{
-
-}
 
 button{
     height: 40px;
@@ -180,17 +150,17 @@ button{
 .field-container {
     height: 40px;
     width: 60%;
-    position: relative; /* Cria um contexto para o posicionamento absoluto do ícone */
-    display: flex; /* Utiliza flexbox para alinha o ícone e o input na horizontal */
+    position: relative; 
+    display: flex;
     background-color: var(--color-white);
     border-radius: 10px;
 }
 
 .field-container input{
-    padding-left: 30px; /* Espaço para evitar que o texto do input fique sobre o ícone */
-    height: 2rem; /* Ajusta a altura do input, se necessário */
-    width: 100%; /* Faz o input ocupar toda a largura do contêiner */
-    box-sizing: border-box; /* Inclui padding e border na largura total */
+    padding-left: 30px;
+    height: 2rem; 
+    width: 100%; 
+    box-sizing: border-box; 
     margin-left: 1rem;
     padding-top: 10px;
     border-radius: 20px;
@@ -205,22 +175,22 @@ input:focus{
 }
 
 .field-container i {
-    position: absolute; /* Permite posicionar o ícone dentro do input */
-    left: 10px; /* Espaço da borda esquerda */
-    top: 50%; /* Centraliza verticalmente o ícone */
-    transform: translateY(-50%); /* Ajusta a posição vertical do ícone */
+    position: absolute; 
+    left: 10px; 
+    top: 50%; 
+    transform: translateY(-50%); 
     color: var(--color-brown);
 }
 
 #time {
-    height: 2rem; /* Ajuste a altura do select para combinar com os outros inputs */
-    padding-left: 30px; /* Espaço para o ícone */
-    width: 100%; /* Faz o select ocupar toda a largura do contêiner */
-    box-sizing: border-box; /* Inclui padding na largura total */
+    height: 2rem; 
+    padding-left: 30px; 
+    width: 100%; 
+    box-sizing: border-box; 
     margin-left: 1rem;
-    appearance: none; /* Remove a aparência padrão do select (se desejado) */
+    appearance: none; 
     border-radius: 20px;
-    background-color: var(--color-white); /* Cor de fundo do select */
+    background-color: var(--color-white);
 }
 
 .field-container #time {
@@ -231,5 +201,39 @@ input:focus{
 }
 
 #time:focus {
-    outline: none; /* Garante que o contorno esteja removido no foco */
+    outline: none;
+}
+
+@media(max-width:450px){
+    section{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .coffe-shop{
+        width: 100%;
+    }
+
+    #reserve{
+        width: 100%;
+        border-radius:0;
+        border-bottom-right-radius: 50px;
+        
+    }
+    .table{
+        height: 8rem;
+        width: 8rem;
+    }
+
+    #table-info{
+        margin: 20px;
+    }
+
+    #time {
+        width: 100%;
+        max-width: 100vw;
+        overflow: hidden;
+    }
 }

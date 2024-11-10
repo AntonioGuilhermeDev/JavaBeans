@@ -5,7 +5,7 @@ const tables = document.querySelectorAll('.table');
 let displayIdTable = document.getElementById('display-id-table');
 let displayStatusTable = document.getElementById('display-status-table');
 let date = document.getElementById('date');
-const errorMessage = document.getElementById('error-message'); // Referência ao parágrafo de erro
+const errorMessage = document.getElementById('error-message'); 
 
 const currentDate = new Date();
 currentDate.setDate(currentDate.getDate() + 1);
@@ -87,9 +87,8 @@ let allTables = [
     }
 ];
 
-// A função para exibir a lista completa de allTables no console
 const displayReservations = function () {
-    console.clear(); // Limpa o console antes de exibir as reservas
+    console.clear(); 
     console.log("Estado Atual das Mesas (allTables):");
     allTables.forEach(table => {
         console.log(`Mesa ${table.id}: ${table.reserved ? 'Reservada' : 'Disponível'} | Usuário: ${table.user} | Horário: ${table.time}`);
@@ -114,32 +113,31 @@ const getUserData = function (user) {
 };
 
 const showError = function (message) {
-    hideError(); // Oculta qualquer mensagem de erro anterior
-    errorMessage.innerText = message; // Atualiza o texto do parágrafo
-    errorMessage.style.display = 'block'; // Exibe o parágrafo
+    hideError(); 
+    errorMessage.innerText = message; 
+    errorMessage.style.display = 'block';
 
-    // Retira a mensagem após três segundos
     setTimeout(hideError, 3000);
 };
 
 const hideError = function () {
-    errorMessage.innerText = ''; // Limpa o texto do parágrafo
-    errorMessage.style.display = 'none'; // Oculta o parágrafo
+    errorMessage.innerText = ''; 
+    errorMessage.style.display = 'none'; 
 };
 
 const validateUser = function (user, password) {
-    hideError(); // Oculta qualquer mensagem de erro anterior
+    hideError(); 
     return getUserData(user)
         .then(userData => {
             if (userData) {
                 if (userData.password === password) {
                     return true;
                 } else {
-                    showError('Senha incorreta'); // Exibe mensagem de erro
+                    showError('Senha incorreta'); 
                     return false; 
                 }
             } else {
-                showError('Usuário não encontrado'); // Exibe mensagem de erro
+                showError('Usuário não encontrado'); 
                 return false; 
             }
         });
@@ -152,9 +150,8 @@ const tableAvailability = function (tableId) {
 const updateTableStatus = function (table, username, time) {
     allTables[table.id].reserved = true;
     allTables[table.id].user = username;
-    allTables[table.id].time = time; // Armazena o horário selecionado
-    alert('Reserva feita para ' + username + ' às ' + time);
-    displayReservations(); // Atualiza a lista de reservas no console
+    allTables[table.id].time = time; 
+    displayReservations(); 
 };
 
 const getTableData = function (tableId) {
@@ -170,7 +167,7 @@ const changeDisplayStatus = function (status) {
 };
 
 const reserveTable = function (username, password, tableId, time) {
-    hideError(); // Oculta qualquer mensagem de erro anterior
+    hideError(); 
     validateUser(username, password)
         .then(isValid => {
             if (isValid) {
@@ -179,7 +176,7 @@ const reserveTable = function (username, password, tableId, time) {
                     updateTableStatus(table, username, time);
                     changeDisplayStatus('Reservada');
                 } else {
-                    showError('Mesa não disponível'); // Exibe mensagem de erro
+                    showError('Mesa não disponível'); 
                 }
             }
         });
@@ -196,27 +193,25 @@ const updateReserveInfo = function () {
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     const tableId = displayIdTable.innerText;
-    const selectedTime = select.value; // Obtenha o horário selecionado
+    const selectedTime = select.value; 
 
-    // Verifica se o usuário foi inserido
     if (user.value.trim() === '') {
-        showError('Por favor, insira o nome de usuário.'); // Exibe mensagem de erro
-        return; // Interrompe a execução se o usuário não estiver preenchido
+        showError('Por favor, insira o nome de usuário.'); 
+        return; 
     }
 
-    // Verifica se a senha foi inserida
     if (password.value.trim() === '') {
-        showError('Por favor, insira a senha.'); // Exibe mensagem de erro
-        return; // Interrompe a execução se a senha não estiver preenchida
+        showError('Por favor, insira a senha.'); 
+        return; 
     }
 
-    // Verifica se o horário foi selecionado
+    
     if (selectedTime === '') {
-        showError('Por favor, selecione um horário.'); // Exibe mensagem de erro
-        return; // Interrompe a execução se nenhum horário for selecionado
+        showError('Por favor, selecione um horário.'); 
+        return; 
     }
 
-    // Chama a função reserveTable após as validações
+   
     reserveTable(user.value, password.value, tableId, selectedTime);
 });
 
