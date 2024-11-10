@@ -7,6 +7,9 @@ let displayStatusTable = document.getElementById('display-status-table');
 let date = document.getElementById('date');
 const errorMessage = document.getElementById('error-message'); 
 
+const modal = document.getElementById('modal');
+const closeModalButton = document.getElementById('close-modal');
+
 const currentDate = new Date();
 currentDate.setDate(currentDate.getDate() + 1);
 date.innerText = currentDate.toLocaleDateString('pt-BR');
@@ -22,6 +25,31 @@ for (let hour = 9; hour <= 22; hour++) {
         select.appendChild(option);
     }
 }
+
+function generateRandomCode() {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let code = '';
+    for (let i = 0; i < 6; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        code += characters[randomIndex];
+    }
+    return code;
+}
+
+function openModal() {
+    const code = generateRandomCode();
+    const modalText = document.getElementById('modal-text');
+    modalText.innerText = `Código de Reserva: ${code}`;
+
+    modal.style.display = 'flex'; 
+}
+
+function closeModal() {
+    modal.style.display = 'none'; 
+}
+
+closeModalButton.addEventListener('click', closeModal);
+
 
 let allTables = [
     '', 
@@ -175,6 +203,7 @@ const reserveTable = function (username, password, tableId, time) {
                     let table = getTableData(tableId);
                     updateTableStatus(table, username, time);
                     changeDisplayStatus('Reservada');
+                    openModal(); 
                 } else {
                     showError('Mesa não disponível'); 
                 }
