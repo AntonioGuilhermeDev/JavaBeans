@@ -1,0 +1,243 @@
+#nosso-espaco {
+    height: 120vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #e6e3de ;
+}
+
+.espaco-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+
+}
+
+.espaco-esquerda div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    height: 100%;
+    width: 100%;
+    background-color: #e6e3de;
+}
+
+.espaco-titulo {
+    font-family: feeling;
+    font-size: 120px;
+    text-align: center;
+    display: inline-block;
+    color: #3c261e;
+    font-weight: normal;
+}
+
+.espaco-botao{
+    height: 60px;
+    width: 250px;
+    border: #3c261e 4px solid;
+    border-radius: 100px;
+    cursor: pointer;
+    background-color: var(--color-light-gray);
+    color: #3c261e;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.espaco-botao:hover{
+    background-color: var(--color-gray);
+}
+
+.espaco-botao-mobile{
+    height: 50px;
+    width: 250px;
+    border: #3c261e 4px solid;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: var(--color-light-gray);
+    color: #3c261e;
+    font-size: 16px;
+    font-weight: bold;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.espaco-botao-mobile:hover{
+    background-color: var(--color-gray);
+}
+
+#espaco-meio{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e6e3de;
+}
+
+.espaco-texto{
+    height: 75%;
+    width: 40%;
+    background-color: #36261e;
+    padding: 20px 0px 0px 30px;
+    overflow-y: auto;
+}
+
+.espaco-subtitulo{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #729da9;
+    font-family: moresugar;
+}
+
+.espaco-texto p{
+    text-align: left;
+    font-size: 20px;
+    display: inline-block;
+    color: #e2fff7;
+}
+
+#espaco-imagem{
+    height: 80%;
+    width: 60%;
+    right: 0;
+    z-index: 1; 
+    box-shadow: 10;
+    box-shadow: -10px 5px 15px rgba(0, 0, 0, 0.5), 
+    0 0 5px rgba(0, 0, 0, 0.2); 
+    background-image: url(../../../../images/espaco/espaco_background.jpeg);
+    background-position: left;
+}
+
+@media screen and (max-width: 1250px) {
+    #nosso-espaco {
+        height: 130vh;
+    }
+    
+    .espaco-titulo {
+        font-size: 100px;
+    }
+
+    .espaco-texto p{
+        font-size: 17px;
+    }
+
+    .espaco-texto {
+        width: 80%;
+        height: 75%;
+    }
+
+    #espaco-imagem {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #nosso-espaco{
+        height: 380vh;
+    }
+    
+    .espaco-container {
+        flex-direction: column;
+    }
+
+    .espaco-esquerda div {
+        width: 100%;
+        order: 1;
+        gap: 0;
+    }
+
+    .espaco-titulo {
+        color: #36261e;
+        font-size: 110px;
+        width: 80%;
+        padding: 10px 0;
+        border-top: 4px #36261e solid;
+        border-bottom: 4px #36261e solid;
+        margin-top: 4rem;
+    }
+
+    .espaco-botao {
+        display: none;
+    }
+
+    .espaco-botao-mobile{
+        display: flex;
+        order: 4;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        height: 60px;
+        width: 220px;
+        border-radius: 100px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    #espaco-meio {
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .espaco-texto {
+        height: 30%;
+        width: 100%;
+        order: 3;
+        padding: 20px 0px 0px 30px;
+    }
+
+    .espaco-texto p{
+        font-size: 20px;
+    }
+
+    .espaco-subtitulo{
+        font-size: 28px;
+        margin: 50px 0px;
+        padding: 0 50px;
+    }
+
+    #espaco-imagem {
+        width: 100%;
+        height: 50%;
+        background-position: left;
+        background-size: cover;
+        order: 2;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .espaco-titulo {
+        width: 100%;
+        height: 80%;
+        margin-top: 60px;
+    }
+
+    .espaco-texto p{
+        font-size: 18px;
+    }
+
+    .espaco-subtitulo{
+        font-size: 20px;
+        margin: 50px 0px;
+        padding: 0;
+    }
+
+    #espaco-imagem {
+        width: 100%;
+        height: 50%;
+    }
+}
