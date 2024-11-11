@@ -22,6 +22,7 @@ document.querySelectorAll('.nav-mobile-menu .nav-link').forEach(link => {
     });
 });
 
+
 window.mostraMenu = mostraMenu; // Torna a função visivel no escopo global
 
 // Função para mostrar/ocultar o dropdown
@@ -54,7 +55,6 @@ function checkLoginStatus() {
 
 // Função para simular login
 function login() {
-    localStorage.setItem("loggedIn", 'true');
     checkLoginStatus();
 }
 
