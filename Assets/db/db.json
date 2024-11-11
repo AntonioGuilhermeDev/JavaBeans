@@ -1,0 +1,11 @@
+{
+  "users": [
+    {
+      "id": "b4a9",
+      "user": "user",
+      "email": "user@email.com",
+      "password": "user123",
+      "statement": false
+    }
+  ]
+}
