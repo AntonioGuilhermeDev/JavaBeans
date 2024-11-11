@@ -166,3 +166,9 @@ button#close-modal {
     bottom: 1rem;
     cursor: pointer;
 }
+
+@media(max-width:550px){
+    #sign-in-container{
+        width: 24rem;
+    }
+}
