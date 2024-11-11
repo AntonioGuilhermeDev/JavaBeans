@@ -1,0 +1,207 @@
+#sobre{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-light-gray);
+}
+
+.sobre-container{
+    height: 100%;
+    display: flex;
+    margin-top: 13%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem; 
+    overflow: hidden;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), 
+    url(../../../../../Assets/images/sobre/background.jpg);
+    background-size: cover;
+    background-position: bottom center;
+    border-end-end-radius: 350px;
+
+}
+
+.sobre-logo {
+    display: flex;
+    width: 30%;
+    height: 50%;
+    margin: 0 auto 8rem auto;
+    z-index: 20;
+    order: 2;
+}
+
+.sobre-texto {
+    display: flex;
+    color: var(--color-white);
+    padding: 25px;
+    width: 60%;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    order: 1;
+    z-index: 10;
+    gap: 80px;
+    margin-bottom: 8rem;
+    /* Ajuste a largura conforme necessário */
+}
+
+.sobre-h1 {
+    font-size: 4.5em;
+    font-family: 'Brush Script MT', cursive;
+    text-align: justify;
+    line-height: 1em;
+    letter-spacing: 0.05em;
+    margin-left: 20px;
+}
+
+
+.sobre-paragrafo {
+    z-index: 10;
+    color: white;
+    width: 80%;
+    text-align: center;
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 1200px){
+    #sobre{
+        height: 120vh;
+    }
+    
+    .sobre-container{
+        margin-top: 0;
+        border-end-end-radius: 200px;
+
+    }
+    
+    .sobre-logo {
+        width: 35%;
+        height: 40%;
+        margin-bottom: 4rem;
+    }
+    
+    .sobre-texto {
+        width: 50%;
+        gap: 80px;
+        margin-bottom: 0rem;
+    }
+    
+    .sobre-h1 {
+        font-size: 4em;
+        font-family: 'Brush Script MT', cursive;
+        text-align: left;
+        width: 100%;
+        font-weight: bold;
+        padding: 0px;
+        margin-left: 0px;
+    }
+    
+    .sobre-paragrafo {
+        width: 100%;
+        text-align: left;
+    }
+    
+}
+
+@media screen and (max-width: 950px) {
+    #sobre{
+        height: 130vh;
+        flex-direction: row;
+    }
+    
+    .sobre-container{
+        margin-top: 0;
+        justify-content: space-between;
+        align-items: center;
+        border-end-end-radius: 0px;
+    }
+    
+    .sobre-logo {
+        align-self: right;
+        margin-bottom: 3rem;
+    }
+    
+    .sobre-texto {
+        padding: 0px;
+        width: 60%;
+        order: 1;
+        z-index: 10;
+        gap: 80px;
+        margin-bottom: 2rem;
+        /* Ajuste a largura conforme necessário */
+    }
+    
+    .sobre-h1 {
+        font-size: 4em;
+        font-family: 'Brush Script MT', cursive;
+        text-align: justify;
+        width: 100%;
+        font-weight: bold;
+        padding: 0px;
+        line-height: 1em;
+        text-align: left;
+        letter-spacing: 0.05em;
+        margin-left: 20px;
+    }
+    
+    .sobre-paragrafo {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    #sobre{
+        height: 165vh;
+        flex-direction: column;
+    }
+    
+    .sobre-container{
+        flex-direction: column;
+        margin-top: 0;
+        justify-content: flex-start;
+        padding: 0;
+    }
+    
+    .sobre-logo {
+        width: 60%;
+        height: 18rem;
+        margin: 5rem auto 2rem auto;
+        align-self: center;
+        z-index: 20;
+        order: 1;
+        z-index: 10;
+    }
+    
+    .sobre-texto {
+        padding-bottom: 0;
+        width: 100%;
+        order: 2;
+        height: auto;
+        z-index: 10;
+        gap: 80px;
+        margin-bottom: 0;
+        margin-left: 0;
+    }
+
+    .sobre-paragrafo {
+        z-index: 10;
+        width: 100%;
+        text-align: center;
+        font-size: 0.9rem;
+        padding: 5px;
+    }
+
+    .sobre-h1 {
+        font-size: 4rem;
+        font-family: 'Brush Script MT', cursive;
+        text-align: center;
+        font-weight: bold;
+        padding: 0px;
+        line-height: 1em;
+        letter-spacing: 0.0em;
+    }
+}
