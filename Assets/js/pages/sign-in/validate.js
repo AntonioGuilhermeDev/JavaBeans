@@ -1,11 +1,3 @@
-const form = document.getElementById('sign-in-fields-form');
-const user = document.getElementById('sign-in-user-field');
-const password = document.getElementById('sign-in-password-field');
-
-const modal = document.getElementById('modal');
-const closeModalButton = document.getElementById('close-modal');
-
-
 function openModal() {
     modal.style.display = 'flex'; 
 }
@@ -33,22 +25,6 @@ const validateFields = function(user, password) {
     }
     return null; 
 };
-
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    
-    const existingWarnings = document.querySelectorAll('.error-warning');
-    existingWarnings.forEach(warning => warning.remove());
-
-    const validationError = validateFields(user.value, password.value);
-    if (validationError) {
-        const errorMessage = createWarning(validationError); 
-        form.insertAdjacentElement('afterbegin', errorMessage); 
-        return; 
-    }
-
-    signInUser(user.value, password.value);
-});
 
 const signInUser = function(user, password) {
     return isUserLogedIn(user).then(isLoggedIn => {
@@ -78,6 +54,9 @@ const signInUser = function(user, password) {
                     })
                     .then(updatedUser => {
                         openModal();
+                        setTimeout(() => {
+                            closeModal();
+                        }, 30000);
                         localStorage.setItem("loggedIn", 'true');
                         return true;
                     });
@@ -141,6 +120,13 @@ function login() {
     checkLoginStatus();
 }
 
-closeModalButton.addEventListener('click', () => {
-    window.location.href = 'index.html';
-});
+export default{
+    openModal,
+    closeModal,
+    createWarning,
+    validateFields,
+    signInUser,
+    getUserData,
+    isUserLogedIn,
+    login
+}
