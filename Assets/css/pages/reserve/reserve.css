@@ -145,6 +145,7 @@ button{
     border-radius: 30px;
     background-color: var(--color-golden);
     color: var(--color-white);
+    cursor:pointer;
 }
 
 .field-container {
