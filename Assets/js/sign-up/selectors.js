@@ -4,4 +4,7 @@ const email = document.querySelector('#sign-up-email-field');
 const password = document.querySelector('#sign-up-password-field');
 const confirmPassword = document.querySelector('#sign-up-confirm-password-field');
 
-export { signUpForm, username, email, password, confirmPassword };
+const modal = document.querySelector('dialog')
+const confimButton = document.getElementById('confirm')
+
+export { signUpForm, username, email, password, confirmPassword, modal, confimButton };
