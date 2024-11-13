@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="Assets/css/pages/sign-in/sign-in.css">
-    <script defer src="Assets/js/sign-in/sign-in.js"></script>
+    <script defer src="Assets/js/pages/sign-in/sign-in.js" type="module"></script>
     <title>Sign In</title>
 </head>
 <body>
@@ -19,9 +19,19 @@
                 <input type="text" placeholder="usuário" class="sign-in-field" id="sign-in-user-field">
                 <input type="password" placeholder="senha" class="sign-in-field" id="sign-in-password-field">
             </div>
-            <button type="submit" id="sign-in-button">Registrar</button>
+            <button type="submit" id="sign-in-button">Entrar</button>
+            <p>Não possui uma conta? <a href="sign-up.html">Clique aqui!</a></p>
         </form>
 
     </div>
+    
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div id="modal-title-bg">
+                <h2 id="modal-title">Login Realizado!</h2>
+            </div>
+            <p id="modal-text"></p>
+            <button id="close-modal">Fechar</button>
+        </div>
 </body>
 </html>
