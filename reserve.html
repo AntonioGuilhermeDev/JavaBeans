@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Assets/css/pages/reserve/reserve.css">
+    <script src="Assets/js/pages/index/reserve/reserve.js" defer type="module"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Reserve</title>
+</head>
+
+<body>
+    <section>
+        <div class="coffe-shop">
+            <div class="coffe-shop-container">
+                <div class="table" data-status="disponivel" id="1"></div>
+                <div class="table table mesa-redonda-grande" data-status="disponivel" id="2"></div>
+                <div class="table" data-status="disponivel" id="3"></div>
+                <div class="table" data-status="disponivel" id="4"></div>
+                <div class="table big-table" data-status="disponivel" id="5"></div>
+                <div class="table mesa-redonda-grande" data-status="disponivel" id="6"></div>
+                <div class="table" data-status="disponivel" id="7"></div>
+                <div class="table" data-status="disponivel" id="8"></div>
+                <div class="table" data-status="disponivel" id="9"></div>
+                <div class="table mesa-redonda-pequena" data-status="disponivel" id="10"></div>
+            </div>
+
+        </div>
+        <div id="reserve">
+            <div id="title">
+                <h1>
+                    Reserva
+                </h1>
+                <p id="date">
+                </p>
+                <img src="Assets/images/logo/logo-2.png" id="logo">
+            </div>
+            <div id="table-info">
+                <div id="left-info">
+                    <h3>
+                        Id:
+                    </h3>
+                    <h3>Status:</h3>
+                </div>
+                <div id="right-info">
+                    <h3 id="display-id-table">
+                        1
+                    </h3>
+                    <h3 id="display-status-table">Disponível</h3>
+                </div>
+            </div>
+            <p id="error-message" style="color: red; display: none;"></p>
+            <form id="reserve-form">
+                <div class="field-container">
+                    <i class="fa-solid fa-user" id="user-icon"></i>
+                    <input type="text" name="" id="user" placeholder="User">
+                </div>
+                <div class="field-container">
+                    <i class="fa-solid fa-lock" id="password-icon"></i>
+                    <input type="password" name="" id="password" placeholder="Password">
+                </div>
+                <div class="field-container">
+                    <i class="fa-solid fa-clock" id="time-icon"></i>
+                    <select id="time">
+                        <option value="" disabled selected>Selecione um horário...</option>
+                    </select>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div id="modal-title-bg">
+                <h2 id="modal-title">Reserva Realizada!</h2>
+            </div>
+            <p id="modal-text"></p>
+            <button id="close-modal">Fechar</button>
+        </div>
+    </div>
+</body>

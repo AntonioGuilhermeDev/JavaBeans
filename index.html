@@ -9,42 +9,389 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
 <body>
 
-    <!-- SOBRE -->
-    <!-- SEU CÓDIGO AQUI PARA A SEÇÃO SOBRE -->
-    
+    <!--NAV-->
+    <header class="nav-header">
+        <div class="nav-topo-header">
+            <div class="nav-perfil">
+                <img src="Assets/images/icones/usuario.png" alt="perfil" onclick="toggleDropdown()" aria-label="Entre ou cadastre-se">
+                <div id="loginDropdown" class="conteudo-dropdown">
+                    <img src="Assets/images/navbar/close_white_36dp.svg" alt="fechar" class="fechar-dropdown" onclick="toggleDropdown()">
+                    <p id="registerMessage">Novo na JavaBeans?</p>
+                    <a href="sign-up.html" id="registerLink">Registrar</a>
+                    <p id="loginMessage">Já tem uma conta?</p>
+                    <a href="sign-in.html" id="loginLink">Entrar</a>
+                    <p href="#" id="welcomeMessage">Bem-vindo!</p>
+                    <a href="reserve.html" id="reservaLink">Visualizar Reservas</a>
+                    <a href="#" id="logoutLink" onclick="logout()">Sair</a>
+                </div>
+            </div>
 
+            <div class="logo">
+                <img src="Assets/images/logos/logo.png" alt="Logo JavaBeans">
+            </div>
+
+            <div class="nav-botao-reservar">
+                <a href="reserve.html" aria-label="Reserve uma mesa">Reserve</a>
+            </div>
+
+            <div class="nav-mobile-icone-menu">
+            <button onclick="mostraMenu()" aria-label="Abrir menu de navegação">
+                <img class="nav-icon" src="Assets/images/navbar/menu_white_36dp.svg" alt="menu">
+            </button>
+            </div>
+        </div>
+
+        <nav class="nav-mobile-menu" aria-label="Menu de navegação">
+            <ul>
+                <li class="nav-item"><a href="#sobre" class="nav-link">Sobre</a></li>
+                <li class="nav-item"><a href="#cardapio" class="nav-link">Cardapio</a></li>
+                <li class="nav-item"><a href="#nosso-espaco" class="nav-link">Nosso Espaço</a></li>
+                <li class="nav-item"><a href="#galeria" class="nav-link">Galeria</a></li>
+                <li class="nav-item"><a href="#eventos" class="nav-link">Eventos</a></li>
+                <li class="nav-item"><a href="#faq" class="nav-link">Perguntas Frequentes</a></li>
+                <li class="nav-item"><a href="#contatos" class="nav-link">Contatos</a></li>
+            </ul>
+        </nav>
+
+        <nav class="nav-bar" aria-label="Menu de navegação principal">
+            <div class="nav-lista">
+                <ul>
+                    <li class="nav-item"><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="#cardapio" class="nav-link">Cardapio</a></li>
+                    <li class="nav-item"><a href="#nosso-espaco" class="nav-link">Espaço</a></li>
+                    <li class="nav-item"><a href="#galeria" class="nav-link">Galeria</a></li>
+                    <li class="nav-item"><a href="#eventos" class="nav-link">Eventos</a></li>
+                    <li class="nav-item"><a href="#faq" class="nav-link">Perguntas Frequentes</a></li>
+                    <li class="nav-item"><a href="#contatos" class="nav-link">Contatos</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- SOBRE -->
+    <section id="sobre">
+        <div class="sobre-container">
+            <img src="Assets/images/logos/logo-2.png" alt="Logo JavaBeans" class="sobre-logo">
+            <article class="sobre-texto">
+                <h1 class="sobre-h1">Conheça <br>nossa história</h1>
+                <p class="sobre-paragrafo">JavaBeans surgiu em 2010, quando dois amigos decidiram unir a paixão por café
+                    artesenal com a ideia de criar um espaço acolhedor e com um toque vintage. Eles queriam um ambiente onde as pessoas pudessem relaxar,socializar ou até mesmo trabalhar com tranquilidade. Com o passar dos anos, o café se tornou um
+                    ponto dereferência, atraindo tanto entusiastas do café quanto profissionais que buscam um lugar agradável para estudar ou trabalhar, sempre prezando por qualidade estudar ou trabalhar, sempre
+                    prezando por qualidade e uma atmosfera convidativa.
+                </p>
+            </article>
+        </div>
+    </section>
     
     <!-- CARDÁPIO -->
-    <!-- SEU CÓDIGO AQUI PARA A SEÇÃO CARDÁPIO -->
-    
-    
-    
+    <section id="cardapio">
+        <div class="cardapio">
+            <img src="Assets/images/icones/chips.png" alt="Ícone Superior Esquerdo" class="icone-superior-esquerdo">
+            <img src="Assets/images/icones/notebook.png" alt="Ícone Inferior Direito" class="icone-inferior-direito">
+            <h1>Cardápio</h1>
+            <div class="item espresso">
+                <div class="topo-item">
+                    <img src="Assets/images/cardapio/espresso.png" alt="Café Espresso" class="cafe">
+                    <div class="detalhes">
+                        <strong>Café Espresso •••••</strong>
+                        <span class="preco">R$ 5,00</span>
+                    </div>
+                </div>
+                <div class="descricao">Café 100% arábica</div>
+            </div>
+            <div class="item mocha">
+                <div class="topo-item">
+                    <img src="Assets/images/cardapio/mocha.png" alt="mocha">
+                    <div class="detalhes">
+                        <strong>Mocha••••••••••••</strong>
+                        <span class="preco">R$ 10,00</span>
+                    </div>
+                </div>
+                <div class="descricao">Café espresso, chocolate amargo, leite vaporizado, chantilly.</div>
+            </div>
+            <div class="item">
+                <div class="topo-item">
+                    <img src="Assets/images/cardapio/empada.jpeg" alt="empada">
+                    <div class="detalhes">
+                        <strong>Emp. De Frango •••</strong>
+                        <span class="preco">R$ 3,50</span>
+                    </div>
+                </div>
+                <div class="descricao">Massa leve, recheio de frango desfiado, temperos.</div>
+            </div>
+            <div class="item">
+                <div class="topo-item">
+                    <img src="Assets/images/cardapio/capuccino.jpg" alt="Cappuccino">
+                    <div class="detalhes">
+                        <strong>Cappuccino•••••••</strong>
+                        <span class="preco">R$ 8,00</span>
+                    </div>
+                </div>
+                <div class="descricao">Café espresso, leite vaporizado,
+                    espuma de leite.</div>
+            </div>
+            <div class="item gelado">
+                <div class="topo-item">
+                    <img src="Assets/images/cardapio/gelado.jpg" alt="Gelado">
+                    <div class="detalhes">
+                        <strong>Café Gelado •••••••</strong>
+                        <span class="preco">R$ 7,00</span>
+                    </div>
+                </div>
+                <div class="descricao">Café espresso, gelo, leite</div>
+            </div>
+            <div class="item">
+                <div class="topo-item">
+                    <img src="Assets/images/cardapio/bolo.png" alt="bolo">
+                    <div class="detalhes">
+                        <strong>Bolo De Cenoura ••</strong>
+                        <span class="preco">R$ 4,00</span>
+                    </div>
+                </div>
+                <div class="descricao">Bolo de cenoura, cobertura de chocolate caseiro.</div>
+            </div>
+            <div class="item">
+                <div class="topo-item">
+                    <img src="Assets/images/cardapio/latte.jpg" alt="Latte">
+                    <div class="detalhes">
+                        <strong>Latte ••••••••••••••</strong>
+                        <span class="preco">R$ 9,00</span>
+                    </div>
+                </div>
+                <div class="descricao">Café espresso, leite vaporizado, um toque de espuma.</div>
+            </div>
+            <div class="item macchiato">
+                <div class="topo-item">
+                    <img src="Assets/images/cardapio/macchiato.jpg" alt="Macchiato">
+                    <div class="detalhes">
+                        <strong>Macchiato•••••••••</strong>
+                        <span class="preco">R$ 7,50</span>
+                    </div>
+                </div>
+                <div class="descricao">Café espresso, um toque de<br>espuma de leite</div>
+            </div>
+            <div class="item brownie">
+                <div class="topo-item">
+                    <img src="Assets/images/cardapio/brownie.jpg" alt="Brownie">
+                    <div class="detalhes">
+                        <strong>Brownie De Choc.••</strong>
+                        <span class="preco">R$ 5,00</span>
+                    </div>
+                </div>
+                <div class="descricao">Chocolate amargo, nozes, açúcar mascavo.</div>
+            </div>
+            <div class="cardapio-footer">
+                <strong>Venha nos visitar para ver mais!</strong>
+            </div>
+        </div>
+    </section>
+
     <!-- NOSSO ESPAÇO -->
-    <!-- SEU CÓDIGO AQUI PARA A SEÇÃO NOSSO ESPAÇO -->
-    
-    
-    
+    <section id="nosso-espaco">
+        <div class="espaco-container">
+            <div class="espaco-esquerda">
+                <div>
+                    <h2 class="espaco-titulo">Nosso Espaço</h2>
+                    <a href="reserve.html" class="espaco-botao">Reserve sua mesa</a>
+                </div>
+            </div>
+            <div id="espaco-meio">
+                <article class="espaco-texto">
+                    <h3 class="espaco-subtitulo">Espaço de Trabalho para Maximizar sua Produtividade</h3>
+                    <p>Na JavaBeans, oferecemos um ambiente pensado para que você possa trabalhar com conforto e eficiência.
+                        <br>
+                        <br>
+                        Nosso espaço combina design aconchegante com áreas amplas e bem iluminadas, criando o cenário ideal para o foco. Além disso, contamos com internet de alta velocidade, garantindo uma conexão estável para todas as suas tarefas online.
+                        <br>
+                        <br>
+                        Venha experimentar e transformar seu dia de trabalho!
+                    </p>
+                </article>
+                <aside id="espaco-imagem" aria-label="Imagem do espaço de trabalho da JavaBeans">
+                </aside>
+                <a href="sign_up.html" class="espaco-botao-mobile">Reserve sua mesa</a>
+            </div>
+        </div>
+    </section>
+
     <!-- GALERIA -->
-    <!-- SEU CÓDIGO AQUI PARA A SEÇÃO GALERIA -->
-    
-    
-    
+    <section id="galeria">
+        <div class="galeria-container">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="project-img">
+                            <img class="galeria-image" src="Assets/images/galeria/galeria-imagem1.jpeg" alt="espaço de trabalho">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="project-img">
+                            <img class="galeria-image" src="Assets/images/galeria/galeria-imagem2.jpeg" alt="espaço de trabalho">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="project-img">
+                            <img class="galeria-image" src="Assets/images/galeria/galeria-imagem3.png" alt="pessoas trabalhando na JavaBeans">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="project-img">
+                            <img class="galeria-image" src="Assets/images/galeria/galeria-imagem4.png" alt="pessoas trabalhando na JavaBeans">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="project-img">
+                            <img class="galeria-image" src="Assets/images/galeria/galeria-imagem5.png" alt="pessoas trabalhando na JavaBeans">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="project-img">
+                            <img class="galeria-image" src="Assets/images/galeria/galeria-imagem6.png" alt="pessoas trabalhando na JavaBeans">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="project-img">
+                            <img class="galeria-image" src="Assets/images/galeria/galeria-imagem7.png" alt="colaboradores preparando o cafe">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
     <!-- EVENTOS -->
-    <!-- SEU CÓDIGO AQUI PARA A SEÇÃO EVENTOS -->
-    
+    <section id="eventos">
+        <div class="eventos-container">
+            <div class="eventos-left-content">
+                <div class="eventos-background">
+                    <img src="Assets/images/eventos/eventos_background.jpg" alt="Imagem da cafeteria">
+                </div>
+                <div class="eventos-abobora">
+                    <img src="Assets/images/icones/abobora.png" alt="Abobora de Halloween">
+                </div>
+            </div>
+            <div class="eventos-right-content">
+                <div class="eventos-titulos-container">
+                    <h2 class="eventos-titulo"> Eventos </h2>
+                    <h3 class="eventos-subtitulo"> Halloween na JavaBeans</h3>
+                </div>
+                <div class="eventos-textos-container">
+                    <p>No dia 31 de outubro, a JavaBeans vai entrar no clima de Halloween e você é nosso convidado! Teremos uma decoração especial e um cardápio com bebidas temáticas, como o Cappuccino da Meia-Noite e o Mocha Assombrado, além de doces e salgados preparados especialmente para a data.</p>
+                    <p class="eventos-data"> Data: 31 de outubro <br> Horário: Das 18h às 23h</p>
+                    <p>Te esperamos para uma noite de sustos e café!!</p>
+                </div>
+            </div>
+        </div>
+    </section>
     
     
     <!-- PERGUNTAS FREQUENTES -->
-    <!-- SEU CÓDIGO AQUI PARA A SEÇÃO PERGUNTAS FREQUENTES -->
-    
-    
-    
+    <section id="faq" >
+        <div class="faq-container" >
+            <div class="faq-image-container">
+                <img src="Assets/images/faq/faq_background.png" alt="cafe">
+            </div>
+            <div class="faq-content" >
+                <h2 class="faq-titulo">Perguntas Frequentes</h2>
+                <div class="faq-accordion" >
+                    <details>
+                        <summary class="faq-accordion-item" >
+                            <span class="faq-accordion-pergunta" >
+                                Quais são os métodos de pagamento aceitos?
+                            </span>
+                        </summary>
+                        <div class="faq-resposta" >
+                            <p>
+                                Aceitamos diversos métodos de pagamento, incluindo cartões de crédito, débito, PIX e carteiras digitais como Apple Pay e Google Pay.
+                            </p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary class="faq-accordion-item" >
+                            <span class="faq-accordion-pergunta" >
+                                É necessário fazer reserva para trabalhar no espaço de coworking?
+                            </span>
+                        </summary>
+                        <div class="faq-resposta">
+                            <p>
+                                Não é necessário fazer reserva para utilizar o nosso espaço de coworking, mas recomendamos que faça uma reserva nos horários de pico para garantir uma mesa, principalmente se precisar de um ambiente tranquilo para trabalhar.
+                            </p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary class="faq-accordion-item" >
+                            <span class="faq-accordion-pergunta" >
+                                O que torna o café da JavaBeans especial?
+                            </span>
+                        </summary>
+                        <div class="faq-resposta">
+                            <p>
+                                Nosso café é cuidadosamente selecionado a partir de grãos artesanais de alta qualidade, preparados por baristas especializados. Nossa missão é proporcionar uma experiência única para os amantes de café, com bebidas feitas com paixão e excelência.
+                            </p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary class="faq-accordion-item" >
+                            <span class="faq-accordion-pergunta" >
+                                A JavaBeans oferece descontos ou promoções?
+                            </span>
+                        </summary>
+                        <div class="faq-resposta">
+                            <p>
+                                Sim! Regularmente oferecemos promoções e descontos para nossos clientes. Fique de olho em nossas redes sociais para se manter atualizado sobre nossas ofertas.
+                            </p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CONTATOS -->
-    <!-- SEU CÓDIGO AQUI PARA A SEÇÃO CONTATOS -->
-    
-    
+    <footer class="footer" id="contatos">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>Java Beans</h2>
+            </div>
+
+            <div class="footer-section">
+                <h3>Endereço</h3>
+                <p>Rua dos Aromas, 123 - Centro<br>Fortaleza, CE - 01000-000</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Horários de Funcionamento</h3>
+                <p>Segunda a Sexta: 8h - 20h<br>Sábado e Domingo: 9h - 18h</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Deseja entrar em contato?</h3>
+                <div class="contact-info">
+                    <p><img src="Assets/images/icones/whatsapp.png" alt="Telefone"> (85) 91234-5678</p>
+                    <p><img src="Assets/images/icones/instagram.png" alt="Instagram"> @JavaBeansCafe</p>
+                    <p><img src="Assets/images/icones/facebook.png" alt="Facebook"> Cafeteria JavaBeans</p>
+                    <p><img src="Assets/images/icones/email.png" alt="Email"> contato@javabeanscafe.com</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-logo-bottom">
+                <img src="Assets/images/logos/logo-2.png" alt="Java Beans Logo Full White">
+            </div>
+            <p>© Copyright 2024. Todos os Direitos Reservados.</p>
+            <div class="cyber-fios">
+                <img src="Assets/images/icones/fios.png" alt="Fios Cibernéticos">
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="Assets/js/global/global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>

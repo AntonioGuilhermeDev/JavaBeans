@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="Assets/css/pages/sign-up/sign-up.css">
+    <script type="module" defer src="Assets/js/sign-up/sign-up.js"></script>
+    <title>Sign Up</title>
+</head>
+<body>
+    <div id="sign-up-container">
+        <h2 id="sign-up-title">
+            Cadastre-se
+        </h2>
+        <img id="logo" src="Assets/images/logo/logo-2.png" alt="">
+        <form action="" id="sign-up-fields-form">
+            <div id="sign-up-fields-wrapper">
+                <input type="text" placeholder="usuário" class="sign-up-field" id="sign-up-user-field">
+                <input type="text" placeholder="e-mail" class="sign-up-field" id="sign-up-email-field">
+                <input type="password" placeholder="senha" class="sign-up-field" id="sign-up-password-field">
+                <input type="password" placeholder="confirme sua senha" class="sign-up-field" id="sign-up-confirm-password-field">
+            </div>
+            <button type="submit" id="sign-up-button">Registrar</button>
+        </form>
+
+        <p>Já possui uma conta? <a href="sign-in.html">Faça login</a></p>
+
+        
+        
+    </div>
+    <dialog>
+        <div id="modal-title-bg">
+            <h2 id="modal-title">CADASTRADO</h2>
+        </div>
+        <p id="modal-text">Usuário cadastrado com sucesso!</p>
+        <button id="confirm">OK</button>
+    </dialog>
+</body>
+</html>

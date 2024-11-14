@@ -1,0 +1,243 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.nav-header { /*Responsavel por agrupar o conteudo de toda a navbar e header*/
+    background-color: var(--color-dark-blue);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-topo-header { /*Agrupa a parte de cima do header com botão, logo e perfil*/
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.nav-header .nav-perfil img { /*Caracteristicas do icone do perfil*/
+    max-width: 50px; 
+    max-height: 50px; 
+    width: auto; 
+    height: auto;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+.conteudo-dropdown {
+    display: none;
+    position: absolute;
+    background-color: var(--color-gray);
+    min-width: 270px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 20px;
+}
+
+.conteudo-dropdown p {
+    font-size: 15px;
+    margin: 2px auto;
+    display: block;
+    text-align: center;
+    font-weight: bolder;
+    margin: 8px auto;
+}
+
+.conteudo-dropdown a {
+    text-align: center;
+    color: var(--color-white);
+    padding: 4px 4px;
+    background-color: var(--color-cyan);
+    text-decoration: none;
+    display: block;
+}
+
+.fechar-dropdown {
+    position: absolute;
+    top: 1px;
+    right: 3px;
+    cursor: pointer;
+    width: 14px; 
+    height: 14px; 
+}
+
+.conteudo-dropdown #welcomeMessage {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.conteudo-dropdown #logoutLink {
+    margin: 10px auto;
+    background-color: #FF0000;
+}
+
+.conteudo-dropdown #logoutLink:hover {
+    background-color: #CC0000;
+}
+
+.conteudo-dropdown a:hover {
+    background-color: var(--color-dark-cyan);
+}
+
+#welcomeMessage , #logoutLink{
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.nav-header .logo img { /* Caracteristicas da logo*/
+    max-width: 6rem;
+    max-height: 4rem;
+    width: auto;
+    height: auto;
+    margin-left: 1rem;  
+}
+
+.nav-botao-reservar a { /* Caracteristicas do 'botão' (link) de reservar*/
+    width: 50px;
+    margin-right: 1rem;
+    padding: 8px 50px;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: var(--color-gray);
+    text-decoration: none;
+    font-weight: bolder;
+    color: var(--color-dark-blue);
+}
+
+.nav-bar { /* Responsavel por agrupar os itens da nav*/
+    background-color: var(--color-cyan);
+    display: flex;
+    justify-content: space-around;
+    padding: 0.3rem 0 0.3rem 0;
+}
+
+.nav-lista { /*Agrupa a lista*/
+    display: flex;
+    align-items: center;
+}
+
+.nav-lista ul { /* Lista */
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-item { /* Item da nav*/
+    margin: 0 24px;
+    position: relative;
+}
+
+.nav-link { 
+    text-decoration: none;
+    color: var(--color-gray);
+    font-size: 16px;
+}
+
+
+.nav-botao-reservar a:hover {
+    background-color: var(--color-light-gray);
+    transition: .5s;
+}
+
+
+.nav-lista ul .nav-item .nav-link::before { /*Barra branca ao passar o mouse*/
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-gray);
+    transition: .3s;
+}
+
+.nav-lista ul .nav-item .nav-link:hover::before {
+    width: 100%;
+}
+
+.nav-mobile-icone-menu { /* Impede que o menu mobile apareça fora da media querie especifica*/
+    display: none;
+}
+
+.nav-mobile-menu{ /* Impede que o menu mobile apareça fora da media querie especifica*/
+    display: none;
+}
+
+@media screen and (max-width: 911px) {
+    .nav-topo-header {
+        display: row;
+    }
+
+    .nav-bar {
+        display: none;
+    }
+
+    .nav-mobile-icone-menu {
+        display: block;
+    }
+
+    .nav-mobile-icone-menu button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .nav-mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+
+    .conteudo-dropdown {
+        position: fixed;
+        left: 50%;
+        right: 0;
+        margin: auto;
+        top: 70px;
+        min-width: 200px;
+    }
+
+    .nav-mobile-menu .nav-item {
+        display: block;
+    }
+
+    
+    .nav-mobile-menu .nav-item .nav-link {
+        display: block;
+        padding: 0.5rem;
+    }
+
+    .open {
+        display: block;
+    }
+
+    .nav-perfil {
+        order: 4;
+        margin-right: 1rem;
+        margin-left: 0;
+    }
+
+    .logo {
+        order: 2;
+        margin: 0 auto
+    }
+
+    .nav-botao-reservar {
+        order: 3;
+        
+    }
+
+    .nav-mobile-icone-menu {
+        order: 1;
+        margin-left: 1rem;
+        margin-right: auto;
+    }
+}
